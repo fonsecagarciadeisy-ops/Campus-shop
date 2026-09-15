@@ -1,0 +1,25 @@
+/* ==========================================================================
+   RESPONSIVE.CSS - Vista enmarcada para pantallas grandes
+   ========================================================================== */
+
+/* En computadores o tablets, centramos la app como un teléfono */
+@media (min-width: 500px) {
+    body {
+        background-color: #e5e7eb;
+        display: flex;
+        justify-content: center;
+        padding: 20px 0;
+    }
+
+    .contenedor-app {
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        border: 1px solid var(--color-borde);
+    }
+
+    .navegacion-inferior,
+    .fondo-oscuro,
+    .menu-lateral {
+        position: absolute;
+    }
+}
