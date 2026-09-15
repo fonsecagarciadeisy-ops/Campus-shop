@@ -1,0 +1,72 @@
+/* ==========================================================================
+   BASE.CSS - Variables de diseño en español y Reset básico
+   ========================================================================== */
+
+/* 1. PALETA DE COLORES Y VARIABLES GLOBALES (:root) */
+:root {
+    --color-primario: #1b4332;       
+    --color-primario-hover: #143528; 
+    --color-secundario: #40916c;     
+    --color-acento: #d8f3dc;        
+
+    --color-fondo: #f8f9fa;         
+    --color-tarjeta: #ffffff;        
+    --color-texto-principal: #1f2937;
+    --color-texto-secundario: #6b7280;
+    --color-borde: #e5e7eb;          
+
+    /* Colores de estado */
+    --color-peligro: #ef4444;        
+    --color-exito: #10b981;      
+
+    /* Radios de borde estandarizados */
+    --radio-pequeno: 8px;
+    --radio-medio: 12px;
+    --radio-grande: 16px;
+    --radio-redondo: 9999px;
+
+    /* Fuente del sistema */
+    --fuente-principal: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+/* 2. RESET BÁSICO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Previene desbordamientos de ancho */
+}
+
+body {
+    font-family: var(--fuente-principal);
+    background-color: var(--color-fondo);
+    color: var(--color-texto-principal);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Imágenes responsivas fluidas */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Enlaces sin decorado por defecto */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Botones limpios listos para estilizar */
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+/* Entradas de texto y selecciones */
+input, select, textarea {
+    font-family: inherit;
+    font-size: 1rem;
+}
