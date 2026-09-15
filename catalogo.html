@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Shop - Catálogo de Ropa</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+    <div class="contenedor-app">
+          <header class="encabezado-superior encabezado-secundario">
+            <a href="index.html" class="boton-volver" aria-label="Volver al inicio">←</a>
+            <h1 class="titulo-pantalla">Catálogo de Ropa</h1>
+            <a href="carrito.html" class="contenedor-icono-carrito" aria-label="Ver mi carrito">
+                🛒<span class="insignia-carrito">3</span>
+            </a>
+        </header>
+
+        <!-- 2. CONTENIDO PRINCIPAL -->
+        <main>
+
+            <!-- Barra de búsqueda en el catálogo -->
+            <section class="seccion-busqueda">
+                <div class="barra-busqueda">
+                    <span class="icono-busqueda">🔍</span>
+                    <input class="campo-busqueda" type="search" placeholder="Filtrar por tipo de prenda...">
+                </div>
+            </section>
+
+            <!-- Chips de filtro por categoría de ropa -->
+            <section class="contenedor-filtros">
+                <span class="boton-filtro activo">Todos</span>
+                <span class="boton-filtro">Sudaderas</span>
+                <span class="boton-filtro">Camisetas</span>
+                <span class="boton-filtro">Chaquetas</span>
+                <span class="boton-filtro">Pantalones</span>
+                <span class="boton-filtro">Polos</span>
+            </section>
+
+            <!-- Cuadrícula de 6 prendas de vestir -->
+            <section class="cuadricula-productos">
+
+                <!-- Prenda 1: Sudadera -->
+                <article class="tarjeta-producto">
+                    <div class="caja-imagen-producto">
+                        <img src="img/sudadera.png" alt="Sudadera Capucha Gris" class="imagen-producto">
+                    </div>
+                    <button class="boton-favorito" aria-label="Guardar en favoritos">♥</button>
+                    <div class="informacion-producto">
+                        <span class="categoria-producto">Abrigo</span>
+                        <h2 class="nombre-producto">Sudadera Capucha Gris</h2>
+                        <span class="precio-producto">$45.000</span>
+                        <a href="producto.html" class="boton-primario boton-accion-pequeno">Ver prenda</a>
+                    </div>
+                </article>
+
+                <!-- Prenda 2: Camiseta -->
+                <article class="tarjeta-producto">
+                    <div class="caja-imagen-producto">
+                        <img src="img/camiseta.png" alt="Camiseta Básica Blanca" class="imagen-producto">
+                    </div>
+                    <button class="boton-favorito" aria-label="Guardar en favoritos">♥</button>
+                    <div class="informacion-producto">
+                        <span class="categoria-producto">Camiseta</span>
+                        <h2 class="nombre-producto">Camiseta Básica Blanca</h2>
+                        <span class="precio-producto">$22.000</span>
+                        <a href="producto.html" class="boton-primario boton-accion-pequeno">Ver prenda</a>
+                    </div>
+                </article>
+
+                <!-- Prenda 3: Chaqueta -->
+                <article class="tarjeta-producto">
+                    <div class="caja-imagen-producto">
+                        <img src="img/chaqueta.png" alt="Chaqueta Rompevientos" class="imagen-producto">
+                    </div>
+                    <button class="boton-favorito" aria-label="Guardar en favoritos">♥</button>
+                    <div class="informacion-producto">
+                        <span class="categoria-producto">Chaqueta</span>
+                        <h2 class="nombre-producto">Chaqueta Rompevientos</h2>
+                        <span class="precio-producto">$52.000</span>
+                        <a href="producto.html" class="boton-primario boton-accion-pequeno">Ver prenda</a>
+                    </div>
+                </article>
+
+                <!-- Prenda 4: Pantalón Jogger -->
+                <article class="tarjeta-producto">
+                    <div class="caja-imagen-producto">
+                        <img src="img/jogger.png" alt="Pantalón Jogger Urbano" class="imagen-producto">
+                    </div>
+                    <button class="boton-favorito" aria-label="Guardar en favoritos">♥</button>
+                    <div class="informacion-producto">
+                        <span class="categoria-producto">Pantalón</span>
+                        <h2 class="nombre-producto">Pantalón Jogger Urbano</h2>
+                        <span class="precio-producto">$38.000</span>
+                        <a href="producto.html" class="boton-primario boton-accion-pequeno">Ver prenda</a>
+                    </div>
+                </article>
+
+                <!-- Prenda 5: Polo Institucional -->
+                <article class="tarjeta-producto">
+                    <div class="caja-imagen-producto">
+                        <img src="img/polo.png" alt="Camisa Polo Institucional" class="imagen-producto">
+                    </div>
+                    <button class="boton-favorito" aria-label="Guardar en favoritos">♥</button>
+                    <div class="informacion-producto">
+                        <span class="categoria-producto">Polo</span>
+                        <h2 class="nombre-producto">Polo Piqué Institucional</h2>
+                        <span class="precio-producto">$28.000</span>
+                        <a href="producto.html" class="boton-primario boton-accion-pequeno">Ver prenda</a>
+                    </div>
+                </article>
+
+                <!-- Prenda 6: Buzo Cuello Redondo -->
+                <article class="tarjeta-producto">
+                    <div class="caja-imagen-producto">
+                        <img src="img/buzo.png" alt="Buzo Cuello Redondo" class="imagen-producto">
+                    </div>
+                    <button class="boton-favorito" aria-label="Guardar en favoritos">♥</button>
+                    <div class="informacion-producto">
+                        <span class="categoria-producto">Buzo</span>
+                        <h2 class="nombre-producto">Buzo Cuello Redondo</h2>
+                        <span class="precio-producto">$42.000</span>
+                        <a href="producto.html" class="boton-primario boton-accion-pequeno">Ver prenda</a>
+                    </div>
+                </article>
+
+            </section>
+
+        </main>
+
+        <!-- 3. NAVEGACIÓN INFERIOR -->
+        <nav class="navegacion-inferior">
+            <ul class="lista-navegacion-inferior">
+                <li>
+                    <a href="index.html" class="enlace-navegacion">
+                        <span class="icono-navegacion">🏠</span>
+                        <span class="texto-navegacion">Inicio</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="catalogo.html" class="enlace-navegacion activo">
+                        <span class="icono-navegacion">🏷️</span>
+                        <span class="texto-navegacion">Catálogo</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="carrito.html" class="enlace-navegacion">
+                        <span class="icono-navegacion">🛒</span>
+                        <span class="texto-navegacion">Carrito</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="historial.html" class="enlace-navegacion">
+                        <span class="icono-navegacion">📦</span>
+                        <span class="texto-navegacion">Pedidos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="perfil.html" class="enlace-navegacion">
+                        <span class="icono-navegacion">👤</span>
+                        <span class="texto-navegacion">Perfil</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+    </div>
+
+</body>
+
+</html>
