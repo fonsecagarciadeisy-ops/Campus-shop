@@ -1,178 +1,326 @@
-/* --- VISTA CARRITO --- */
-.cart-page {
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+/* ==========================================================================
+   COMPONENTS.CSS - Componentes reutilizables (Modo Aprendiz Front-End)
+   ========================================================================== */
+
+/* 1. Menú lateral con truco del checkbox (Sin JavaScript) */
+/* El checkbox oculto activa el menú lateral al cambiar su estado a :checked */
+.interruptor-menu { display: none; }
+
+.fondo-oscuro {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: none;
+    z-index: 20;
 }
 
-/* Header secundario */
-.inner-header {
-    background-color: transparent;
-}
-
-.page-title {
-    font-size: 1.1rem;
-    font-weight: 700;
-}
-
-/* Tarjeta de Producto en Carrito */
-.cart-list {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.cart-item {
-    background: var(--card-bg);
-    border-radius: var(--radius-lg);
-    padding: 14px;
-    display: flex;
-    gap: 14px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-}
-
-.cart-item-img {
-    width: 85px;
-    height: 85px;
-    object-fit: cover;
-    border-radius: 12px;
-    background-color: #f0f3f1;
-}
-
-.cart-item-details {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.cart-item-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-.cart-item-header h3 {
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    line-height: 1.2;
-}
-
-.delete-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    opacity: 0.6;
-    transition: opacity 0.2s;
-}
-
-.delete-btn:hover {
-    opacity: 1;
-}
-
-.sku {
-    font-size: 0.75rem;
-    color: var(--text-secondary);
-    margin-top: 2px;
-}
-
-.cart-item-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-top: 10px;
-}
-
-/* Selector de Cantidades (- 1 +) */
-.quantity-selector {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background-color: #f3f4f6;
-    border-radius: 20px;
-    padding: 2px 8px;
-}
-
-.quantity-selector button {
-    background: none;
-    border: none;
-    font-size: 1rem;
-    font-weight: bold;
-    color: var(--text-primary);
-    width: 24px;
-    height: 24px;
-    cursor: pointer;
-}
-
-.quantity-selector span {
-    font-size: 0.85rem;
-    font-weight: 600;
-}
-
-/* Precios */
-.price-box {
-    text-align: right;
-}
-
-.price-box .price {
-    display: block;
-    font-weight: 700;
-    font-size: 0.95rem;
-}
-
-.price-box small {
-    font-size: 0.7rem;
-    color: var(--text-secondary);
-}
-
-/* Resumen del Pedido */
-.cart-summary {
-    background: var(--card-bg);
-    border-radius: var(--radius-lg);
+.menu-lateral {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    width: 250px;
+    height: 100%;
+    background: var(--color-tarjeta);
     padding: 20px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    margin-top: 10px;
+    gap: 15px;
+    transition: left 0.3s;
+    z-index: 30;
 }
 
-.summary-row {
+.cabecera-menu-lateral {
     display: flex;
     justify-content: space-between;
-    font-size: 0.9rem;
-    color: var(--text-secondary);
+    align-items: center;
+    border-bottom: 1px solid var(--color-borde);
+    padding-bottom: 8px;
 }
 
-.summary-divider {
-    border: none;
-    border-top: 1px solid #e5e7eb;
-    margin: 4px 0;
+.navegacion-menu-lateral a {
+    display: block;
+    padding: 8px 0;
+    border-bottom: 1px solid #f3f4f6;
+    font-weight: bold;
 }
 
-.total-row {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--text-primary);
-}
+#interruptor-menu:checked ~ .fondo-oscuro { display: block; }
+#interruptor-menu:checked ~ .menu-lateral { left: 0; }
 
-/* Botón Verde Principal */
-.btn-primary {
+/* 2. Botones y enlaces */
+.boton-primario {
     display: block;
     width: 100%;
-    background-color: var(--primary-color);
+    padding: 12px;
+    background: var(--color-primario);
     color: white;
     text-align: center;
-    padding: 14px;
-    border-radius: 12px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95rem;
-    margin-top: 8px;
-    transition: background-color 0.2s;
+    border-radius: var(--radio);
+    font-weight: bold;
 }
 
-.btn-primary:hover {
-    background-color: #143528;
+.boton-lineas {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 2px solid var(--color-primario);
+    color: var(--color-primario);
+    text-align: center;
+    border-radius: var(--radio);
+    font-weight: bold;
 }
+
+.boton-volver {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f3f4f6;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.boton-accion-pequeno { padding: 6px; font-size: 0.8rem; margin-top: 4px; }
+.boton-favorito {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1px solid var(--color-borde);
+    color: var(--color-peligro);
+    font-size: 0.85rem;
+}
+.boton-eliminar { font-size: 1.1rem; opacity: 0.7; }
+.enlace-texto { color: var(--color-primario); font-size: 0.85rem; font-weight: bold; }
+.enlace-peligro { color: var(--color-peligro); font-size: 0.8rem; font-weight: bold; }
+
+/* 3. Icono del carrito con contador */
+.contenedor-icono-carrito { position: relative; font-size: 1.3rem; }
+.insignia-carrito {
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    background: var(--color-primario);
+    color: white;
+    font-size: 0.65rem;
+    padding: 2px 6px;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+/* 4. Buscador y Categorías */
+.barra-busqueda {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #f3f4f6;
+    padding: 10px;
+    border-radius: var(--radio);
+}
+
+.campo-busqueda { width: 100%; border: none; background: transparent; outline: none; }
+.cabecera-seccion { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+.titulo-seccion { font-size: 1rem; font-weight: bold; }
+
+.contenedor-categorias, .contenedor-filtros { display: flex; gap: 10px; overflow-x: auto; }
+.tarjeta-categoria { text-align: center; font-size: 0.75rem; flex-shrink: 0; }
+.caja-icono-categoria {
+    width: 55px;
+    height: 55px;
+    background: #f3f4f6;
+    border-radius: var(--radio);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    margin-bottom: 4px;
+}
+
+.boton-filtro { padding: 6px 14px; background: #f3f4f6; border-radius: 20px; font-size: 0.8rem; white-space: nowrap; }
+.boton-filtro.activo { background: var(--color-primario); color: white; }
+
+/* 5. Tarjetas de ropa en cuadrícula */
+.cuadricula-productos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.tarjeta-producto {
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.caja-imagen-producto {
+    height: 130px;
+    background: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+}
+
+.informacion-producto { padding: 10px; display: flex; flex-direction: column; gap: 3px; }
+.categoria-producto { font-size: 0.7rem; color: var(--color-gris); text-transform: uppercase; }
+.nombre-producto { font-size: 0.85rem; font-weight: bold; }
+.precio-producto { font-size: 0.95rem; font-weight: bold; color: var(--color-primario); }
+
+/* 6. Detalle de prenda */
+.detalle-caja-imagen {
+    height: 230px;
+    background: #f8f9fa;
+    border-radius: var(--radio);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.detalle-informacion { display: flex; flex-direction: column; gap: 10px; }
+.detalle-precio { font-size: 1.4rem; font-weight: bold; color: var(--color-primario); }
+.detalle-descripcion { font-size: 0.85rem; color: var(--color-gris); }
+.selector-tallas { display: flex; gap: 8px; margin: 6px 0; }
+.opcion-talla {
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--color-borde);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+.opcion-talla.seleccionada { background: var(--color-primario); color: white; }
+.fila-compra { display: flex; gap: 10px; align-items: center; }
+
+/* 7. Carrito de compras */
+.lista-carrito { display: flex; flex-direction: column; gap: 12px; }
+.item-carrito {
+    display: flex;
+    gap: 10px;
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+    padding: 10px;
+}
+
+.imagen-carrito { width: 75px; height: 75px; border-radius: 8px; object-fit: cover; }
+.detalles-item-carrito { flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+.cabecera-item-carrito { display: flex; justify-content: space-between; font-size: 0.9rem; font-weight: bold; }
+.referencia-item { font-size: 0.7rem; color: var(--color-gris); }
+.pie-item-carrito { display: flex; justify-content: space-between; align-items: center; }
+.selector-cantidad {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #f3f4f6;
+    border-radius: 15px;
+    padding: 2px 8px;
+}
+
+.resumen-compra {
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.fila-resumen { display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--color-gris); }
+.fila-total {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--color-texto);
+    border-top: 1px solid var(--color-borde);
+    padding-top: 6px;
+}
+.texto-exito { color: var(--color-exito); font-weight: bold; }
+
+/* 8. Formularios de Checkout */
+.grupo-formulario { display: flex; flex-direction: column; gap: 4px; margin-bottom: 10px; }
+.etiqueta-formulario { font-size: 0.8rem; color: var(--color-gris); font-weight: bold; }
+.campo-formulario { padding: 10px; border: 1px solid var(--color-borde); border-radius: 8px; outline: none; }
+.fila-formulario { display: flex; gap: 10px; }
+.columna-formulario { flex: 1; }
+.opcion-pago {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+/* 9. Perfil, Pedidos y Estado Vacío */
+.tarjeta-usuario {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #f8f9fa;
+    padding: 14px;
+    border-radius: var(--radio);
+}
+
+.avatar-usuario {
+    width: 48px;
+    height: 48px;
+    background: var(--color-acento);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.insignia-usuario {
+    font-size: 0.7rem;
+    background: var(--color-acento);
+    color: var(--color-primario);
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.lista-menu-perfil { display: flex; flex-direction: column; gap: 8px; }
+.opcion-menu-perfil {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+.tarjeta-pedido {
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.cabecera-pedido { display: flex; justify-content: space-between; font-weight: bold; font-size: 0.9rem; }
+.insignia-pedido { padding: 2px 8px; border-radius: 10px; font-size: 0.7rem; }
+.insignia-pendiente { background: #fef3c7; color: #92400e; }
+.insignia-entregado { background: #d1fae5; color: #065f46; }
+.pie-pedido { display: flex; justify-content: space-between; font-weight: bold; font-size: 0.9rem; }
+
+.estado-vacio {
+    text-align: center;
+    padding: 40px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.icono-estado-vacio { font-size: 3.5rem; }
