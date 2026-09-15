@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusShop - Finalizar Compra</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <div class="contenedor-app">
+        <header class="encabezado-superior encabezado-secundario">
+            <a href="carrito.html" class="boton-volver" aria-label="Volver al carrito">←</a>
+            <h1 class="titulo-pantalla">Finalizar Compra</h1>
+            <div class="espaciador-encabezado"></div>
+        </header>
+
+        <main>
+            <section class="seccion-formulario">
+                <form action="historial.html" method="GET">
+                    
+                    <h2 class="titulo-seccion">📍 Datos de Entrega</h2>
+                    
+                    <div class="grupo-formulario">
+                        <label class="etiqueta-formulario" for="nombre">Nombre Completo</label>
+                        <input class="campo-formulario" type="text" id="nombre" placeholder="Ej: Camilo Pérez" required>
+                    </div>
+
+                    <div class="grupo-formulario">
+                        <label class="etiqueta-formulario" for="direccion">Dirección de Entrega / Salón Campus</label>
+                        <input class="campo-formulario" type="text" id="direccion" placeholder="Ej: Calle 45 #20-15 o Aula 302" required>
+                    </div>
+
+                    <div class="fila-formulario">
+                        <div class="grupo-formulario columna-formulario">
+                            <label class="etiqueta-formulario" for="ciudad">Ciudad</label>
+                            <input class="campo-formulario" type="text" id="ciudad" value="Bucaramanga" required>
+                        </div>
+                        <div class="grupo-formulario columna-formulario">
+                            <label class="etiqueta-formulario" for="telefono">Teléfono</label>
+                            <input class="campo-formulario" type="tel" id="telefono" placeholder="310 000 0000" required>
+                        </div>
+                    </div>
+
+                    <h2 class="titulo-seccion">💳 Método de Pago</h2>
+                    
+                    <div class="opciones-pago">
+                        <label class="opcion-pago">
+                            <input type="radio" name="pago" value="tarjeta" checked>
+                            <span class="icono-pago">💳</span>
+                            <span>Tarjeta Débito / Crédito</span>
+                        </label>
+                        <label class="opcion-pago">
+                            <input type="radio" name="pago" value="nequi">
+                            <span class="icono-pago">📱</span>
+                            <span>Nequi / Daviplata</span>
+                        </label>
+                        <label class="opcion-pago">
+                            <input type="radio" name="pago" value="efectivo">
+                            <span class="icono-pago">💵</span>
+                            <span>Pago en Efectivo en Recepción</span>
+                        </label>
+                    </div>
+                    <div class="resumen-compra">
+                        <div class="fila-resumen fila-total">
+                            <span>Total a Cobrar</span>
+                            <span>$141.610</span>
+                        </div>
+                    </div>
+                    <button type="submit" class="boton-primario">Confirmar Pedido</button>
+                </form>
+            </section>
+        </main>
+
+        <nav class="navegacion-inferior">
+            <ul class="lista-navegacion-inferior">
+                <li>
+                    <a href="index.html" class="enlace-navegacion">
+                        <span class="icono-navegacion">🏠</span>
+                        <span class="texto-navegacion">Inicio</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="catalogo.html" class="enlace-navegacion">
+                        <span class="icono-navegacion">🏷️</span>
+                        <span class="texto-navegacion">Catálogo</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="carrito.html" class="enlace-navegacion">
+                        <span class="icono-navegacion">🛒</span>
+                        <span class="texto-navegacion">Carrito</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="historial.html" class="enlace-navegacion">
+                        <span class="icono-navegacion">📦</span>
+                        <span class="texto-navegacion">Pedidos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="perfil.html" class="enlace-navegacion">
+                        <span class="icono-navegacion">👤</span>
+                        <span class="texto-navegacion">Perfil</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</body>
+</html>
