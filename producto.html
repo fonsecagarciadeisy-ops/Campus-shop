@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusShop - Detalle de Prenda</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <div class="contenedor-app">
+        <header class="encabezado-superior encabezado-secundario">
+            <a href="catalogo.html" class="boton-volver" aria-label="Volver al catálogo">←</a>
+            <h1 class="titulo-pantalla">Detalle de Prenda</h1>
+            <a href="carrito.html" class="contenedor-icono-carrito" aria-label="Ver mi carrito">
+                🛒<span class="insignia-carrito">3</span>
+            </a>
+        </header>
+
+        <main>
+            <section class="detalle-caja-imagen">
+                <img src="img/sudadera.png" alt="Sudadera con Capucha Gris" class="detalle-imagen">
+            </section>
+
+            <article class="detalle-informacion">
+                <div>
+                    <span class="categoria-producto">Colección Oficial Campus</span>
+                    <h2 class="detalle-titulo">Sudadera con Capucha Gris</h2>
+                    <span class="referencia-item">Ref: #ROPA-67890</span>
+                </div>
+
+                <div>
+                    <span class="detalle-precio">$45.000 COP</span>
+                </div>
+
+                <p class="detalle-descripcion">
+                    Sudadera confeccionada en algodón perchado de alta densidad. Cuenta con cordón ajustable, bolsillo canguro y escudo bordado de Campus en el pecho. Ideal para clima templado y frío.
+                </p>
+
+                <div>
+                    <h3 class="titulo-opciones">Selecciona tu Talla</h3>
+                    <div class="selector-tallas">
+                        <span class="opcion-talla">S</span>
+                        <span class="opcion-talla seleccionada">M</span>
+                        <span class="opcion-talla">L</span>
+                        <span class="opcion-talla">XL</span>
+                    </div>
+                </div>
+
+                <div class="fila-compra">
+                    <div class="selector-cantidad">
+                        <button type="button" class="boton-cantidad" aria-label="Disminuir cantidad">-</button>
+                        <span class="valor-cantidad">1</span>
+                        <button type="button" class="boton-cantidad" aria-label="Aumentar cantidad">+</button>
+                    </div>
+                    <a href="carrito.html" class="boton-primario">Añadir al Carrito</a>
+                </div>
+            </article>
+        </main>
+
+        <nav class="navegacion-inferior">
+            <ul class="lista-navegacion-inferior">
+                <li>
+                    <a href="index.html" class="enlace-navegacion">
+                        <span class="icono-navegacion">🏠</span>
+                        <span class="texto-navegacion">Inicio</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="catalogo.html" class="enlace-navegacion activo">
+                        <span class="icono-navegacion">🏷️</span>
+                        <span class="texto-navegacion">Catálogo</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="carrito.html" class="enlace-navegacion">
+                        <span class="icono-navegacion">🛒</span>
+                        <span class="texto-navegacion">Carrito</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="historial.html" class="enlace-navegacion">
+                        <span class="icono-navegacion">📦</span>
+                        <span class="texto-navegacion">Pedidos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="perfil.html" class="enlace-navegacion">
+                        <span class="icono-navegacion">👤</span>
+                        <span class="texto-navegacion">Perfil</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</body>
+</html>
