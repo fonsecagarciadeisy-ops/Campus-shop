@@ -4,6 +4,7 @@
 
 /* 1. Contenedor principal con tamaño de celular */
 .contenedor-app {
+    width: 100%;
     max-width: 480px;
     min-height: 100vh;
     margin: 0 auto;
@@ -12,6 +13,7 @@
     flex-direction: column;
     padding-bottom: 70px;
     position: relative;
+    overflow-x: hidden;
 }
 
 /* 2. Encabezados superior y secundario */

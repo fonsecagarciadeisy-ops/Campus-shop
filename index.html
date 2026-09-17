@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,15 +9,12 @@
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/responsive.css">
 </head>
-
 <body>
 
     <div class="contenedor-app">
 
-        <!-- 1. TRUCO DEL CHECKBOX PARA EL MENÚ LATERAL (Sin JavaScript) -->
-        <!-- El checkbox oculto cambia de estado al pulsar su etiqueta <label> -->
+        <!-- Menú Lateral -->
         <input type="checkbox" id="interruptor-menu" class="interruptor-menu" aria-label="Abrir menú de navegación">
-
         <label for="interruptor-menu" class="fondo-oscuro"></label>
 
         <aside class="menu-lateral">
@@ -29,10 +25,9 @@
             <nav class="navegacion-menu-lateral">
                 <a href="index.html">🏠 Inicio</a>
                 <a href="catalogo.html">🏷️ Catálogo de Ropa</a>
-                <a href="carrito.html">🛒 Mi Carrito</a>
+                <a href="vacio.html">🛒 Mi Carrito</a>
                 <a href="historial.html">📦 Mis Pedidos</a>
                 <a href="perfil.html">👤 Mi Perfil</a>
-                <a href="vacio.html">🗑️ Carrito Vacío</a>
             </nav>
         </aside>
 
@@ -41,8 +36,8 @@
 
             <h1 class="logotipo">CampusShop</h1>
 
-            <a href="carrito.html" class="contenedor-icono-carrito" aria-label="Ver mi carrito">
-                🛒<span class="insignia-carrito">3</span>
+            <a href="vacio.html" class="contenedor-icono-carrito" aria-label="Ver mi carrito">
+                🛒
             </a>
         </header>
 
@@ -51,7 +46,7 @@
             <section class="seccion-busqueda">
                 <form class="barra-busqueda" action="catalogo.html" method="GET">
                     <span class="icono-busqueda">🔍</span>
-                    <input class="campo-busqueda" type="search" placeholder="Buscar sudaderas, camisetas, joggers..." aria-label="Buscar prendas">
+                    <input class="campo-busqueda" type="search" name="buscar" placeholder="Buscar sudaderas, camisetas, joggers..." aria-label="Buscar prendas">
                 </form>
             </section>
 
@@ -60,19 +55,19 @@
                     <h2 class="titulo-seccion">Categorías de Ropa</h2>
                 </div>
                 <div class="contenedor-categorias">
-                    <a href="catalogo.html" class="tarjeta-categoria">
+                    <a href="catalogo.html?categoria=abrigos" class="tarjeta-categoria">
                         <div class="caja-icono-categoria">🧥</div>
                         <span class="nombre-categoria">Abrigos</span>
                     </a>
-                    <a href="catalogo.html" class="tarjeta-categoria">
+                    <a href="catalogo.html?categoria=camisetas" class="tarjeta-categoria">
                         <div class="caja-icono-categoria">👕</div>
                         <span class="nombre-categoria">Camisetas</span>
                     </a>
-                    <a href="catalogo.html" class="tarjeta-categoria">
+                    <a href="catalogo.html?categoria=pantalones" class="tarjeta-categoria">
                         <div class="caja-icono-categoria">👖</div>
                         <span class="nombre-categoria">Pantalones</span>
                     </a>
-                    <a href="catalogo.html" class="tarjeta-categoria">
+                    <a href="catalogo.html?categoria=polos" class="tarjeta-categoria">
                         <div class="caja-icono-categoria">👔</div>
                         <span class="nombre-categoria">Polos</span>
                     </a>
@@ -159,7 +154,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="carrito.html" class="enlace-navegacion">
+                    <a href="vacio.html" class="enlace-navegacion">
                         <span class="icono-navegacion">🛒</span>
                         <span class="texto-navegacion">Carrito</span>
                     </a>
@@ -178,9 +173,6 @@
                 </li>
             </ul>
         </nav>
-
     </div>
-
 </body>
-
 </html>

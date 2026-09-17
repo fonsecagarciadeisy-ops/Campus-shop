@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,37 +16,52 @@
           <header class="encabezado-superior encabezado-secundario">
             <a href="index.html" class="boton-volver" aria-label="Volver al inicio">←</a>
             <h1 class="titulo-pantalla">Catálogo de Ropa</h1>
-            <a href="carrito.html" class="contenedor-icono-carrito" aria-label="Ver mi carrito">
-                🛒<span class="insignia-carrito">3</span>
+            <a href="vacio.html" class="contenedor-icono-carrito" aria-label="Ver mi carrito">
+                🛒
             </a>
         </header>
 
-        <!-- 2. CONTENIDO PRINCIPAL -->
+        <!-- Filtros por Categoría -->
+        <input type="radio" name="filtro" id="filtro-todos" class="control-filtro" checked>
+        <input type="radio" name="filtro" id="filtro-sudaderas" class="control-filtro">
+        <input type="radio" name="filtro" id="filtro-camisetas" class="control-filtro">
+        <input type="radio" name="filtro" id="filtro-chaquetas" class="control-filtro">
+        <input type="radio" name="filtro" id="filtro-pantalones" class="control-filtro">
+        <input type="radio" name="filtro" id="filtro-polos" class="control-filtro">
+
         <main>
 
-            <!-- Barra de búsqueda en el catálogo -->
+            <!-- Barra de Búsqueda -->
             <section class="seccion-busqueda">
-                <div class="barra-busqueda">
+                <form class="barra-busqueda" action="catalogo.html" method="GET">
                     <span class="icono-busqueda">🔍</span>
-                    <input class="campo-busqueda" type="search" placeholder="Filtrar por tipo de prenda...">
-                </div>
+                    <input class="campo-busqueda" type="search" list="lista-prendas" placeholder="Buscar sudaderas, camisetas, joggers..." aria-label="Buscar prendas">
+                    <datalist id="lista-prendas">
+                        <option value="Sudadera Capucha Gris">
+                        <option value="Camiseta Básica Blanca">
+                        <option value="Chaqueta Rompevientos">
+                        <option value="Pantalón Jogger Urbano">
+                        <option value="Polo Piqué Institucional">
+                        <option value="Buzo Cuello Redondo">
+                    </datalist>
+                </form>
             </section>
 
-            <!-- Chips de filtro por categoría de ropa -->
+            <!-- Chips de Filtro -->
             <section class="contenedor-filtros">
-                <span class="boton-filtro activo">Todos</span>
-                <span class="boton-filtro">Sudaderas</span>
-                <span class="boton-filtro">Camisetas</span>
-                <span class="boton-filtro">Chaquetas</span>
-                <span class="boton-filtro">Pantalones</span>
-                <span class="boton-filtro">Polos</span>
+                <label for="filtro-todos" class="boton-filtro etiqueta-todos">Todos</label>
+                <label for="filtro-sudaderas" class="boton-filtro etiqueta-sudaderas">Sudaderas</label>
+                <label for="filtro-camisetas" class="boton-filtro etiqueta-camisetas">Camisetas</label>
+                <label for="filtro-chaquetas" class="boton-filtro etiqueta-chaquetas">Chaquetas</label>
+                <label for="filtro-pantalones" class="boton-filtro etiqueta-pantalones">Pantalones</label>
+                <label for="filtro-polos" class="boton-filtro etiqueta-polos">Polos</label>
             </section>
 
             <!-- Cuadrícula de 6 prendas de vestir -->
             <section class="cuadricula-productos">
 
                 <!-- Prenda 1: Sudadera -->
-                <article class="tarjeta-producto">
+                <article class="tarjeta-producto prenda-sudadera prenda-abrigo">
                     <div class="caja-imagen-producto">
                         <img src="img/sudadera_con_capucha_gris.webp" alt="Sudadera Capucha Gris" class="imagen-producto">
                     </div>
@@ -61,7 +75,7 @@
                 </article>
 
                 <!-- Prenda 2: Camiseta -->
-                <article class="tarjeta-producto">
+                <article class="tarjeta-producto prenda-camiseta">
                     <div class="caja-imagen-producto">
                         <img src="img/Camiseta basica blanca.webp" alt="Camiseta Básica Blanca" class="imagen-producto">
                     </div>
@@ -75,7 +89,7 @@
                 </article>
 
                 <!-- Prenda 3: Chaqueta -->
-                <article class="tarjeta-producto">
+                <article class="tarjeta-producto prenda-chaqueta prenda-abrigo">
                     <div class="caja-imagen-producto">
                         <img src="img/Rompevientos-negro_unisex.webp" alt="Chaqueta Rompevientos" class="imagen-producto">
                     </div>
@@ -89,7 +103,7 @@
                 </article>
 
                 <!-- Prenda 4: Pantalón Jogger -->
-                <article class="tarjeta-producto">
+                <article class="tarjeta-producto prenda-pantalon">
                     <div class="caja-imagen-producto">
                         <img src="img/pantalon Jogger.webp" alt="Pantalón Jogger Urbano" class="imagen-producto">
                     </div>
@@ -103,7 +117,7 @@
                 </article>
 
                 <!-- Prenda 5: Polo Institucional -->
-                <article class="tarjeta-producto">
+                <article class="tarjeta-producto prenda-polo">
                     <div class="caja-imagen-producto">
                         <img src="img/polos_unisex.RK4.webp" alt="Camisa Polo Institucional" class="imagen-producto">
                     </div>
@@ -117,7 +131,7 @@
                 </article>
 
                 <!-- Prenda 6: Buzo Cuello Redondo -->
-                <article class="tarjeta-producto">
+                <article class="tarjeta-producto prenda-sudadera prenda-buzo prenda-abrigo">
                     <div class="caja-imagen-producto">
                         <img src="img/Buzos_cuello_redondo_unisex.webp" alt="Buzo Cuello Redondo" class="imagen-producto">
                     </div>
@@ -150,7 +164,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="carrito.html" class="enlace-navegacion">
+                    <a href="vacio.html" class="enlace-navegacion">
                         <span class="icono-navegacion">🛒</span>
                         <span class="texto-navegacion">Carrito</span>
                     </a>
@@ -169,9 +183,6 @@
                 </li>
             </ul>
         </nav>
-
     </div>
-
 </body>
-
 </html>

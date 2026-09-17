@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,112 +12,156 @@
 
 <body>
 
-    <header class="top-header inner-header">
-        <a href="index.html" class="back-btn" aria-label="Volver atrás">
-            <img src="img/back-icon.svg" alt="Volver">
-        </a>
-        <h1 class="page-title">Mi Carrito (3)</h1>
-        <div style="width: 24px;"></div> <!-- Espaciador para centrar el título -->
-    </header>
+    <div class="contenedor-app">
 
-    <main class="cart-page">
-        <!-- Lista de Productos -->
-        <section class="cart-list">
+        <!-- Controles para eliminar prendas con CSS -->
+        <input type="checkbox" id="eliminar-item-1" class="control-eliminar" checked>
+        <input type="checkbox" id="eliminar-item-2" class="control-eliminar" checked>
 
-            <article class="cart-item">
-                <img src="img/Camiseta basica blanca.webp" alt="Camiseta" class="cart-item-img">
-                <div class="cart-item-details">
-                    <div class="cart-item-header">
-                        <h3>Taza de Cerámica Campus</h3>
-                        <button class="delete-btn" aria-label="Eliminar producto">
-                            <img src="img/trash-icon.svg" alt="Eliminar">
-                        </button>
-                    </div>
-                    <span class="sku">Ref: #SKU12345</span>
-                    <div class="cart-item-footer">
-                        <div class="quantity-selector">
-                            <button type="button">-</button>
-                            <span>1</span>
-                            <button type="button">+</button>
-                        </div>
-                        <div class="price-box">
-                            <span class="price">$22.000</span>
-                            <small>subtotal</small>
-                        </div>
-                    </div>
-                </div>
-            </article>
+        <header class="encabezado-superior encabezado-secundario">
+            <a href="catalogo.html" class="boton-volver" aria-label="Volver al catálogo">←</a>
+            <h1 class="titulo-pantalla">Mi Carrito</h1>
+            <div class="espaciador-encabezado"></div>
+        </header>
 
-            <article class="cart-item">
-                <img src="img/sudadera_con_capucha_gris.webp" alt="Sudadera Gris" class="cart-item-img">
-                <div class="cart-item-details">
-                    <div class="cart-item-header">
-                        <h3>Sudadera con Capucha Gris</h3>
-                        <button class="delete-btn" aria-label="Eliminar producto">
-                            <img src="img/trash-icon.svg" alt="Eliminar">
-                        </button>
-                    </div>
-                    <span class="sku">Ref: #SKU67890</span>
-                    <div class="cart-item-footer">
-                        <div class="quantity-selector">
-                            <button type="button">-</button>
-                            <span>1</span>
-                            <button type="button">+</button>
-                        </div>
-                        <div class="price-box">
-                            <span class="price">$45.000</span>
-                            <small>subtotal</small>
-                        </div>
-                    </div>
-                </div>
-            </article>
+        <main>
 
-            <article class="cart-item">
-                <img src="img/Buzos_cuello_redondo_unisex.webp" alt="Buzos_cuello_redondo_unisex" class="cart-item-img">
-                <div class="cart-item-details">
-                    <div class="cart-item-header">
-                        <h3>Buzos_cuello_redondo_unisex</h3>
-                        <button class="delete-btn" aria-label="Eliminar producto">
-                            <img src="img/trash-icon.svg" alt="Eliminar">
-                        </button>
-                    </div>
-                    <span class="sku">Ref: #SKU11223</span>
-                    <div class="cart-item-footer">
-                        <div class="quantity-selector">
-                            <button type="button">-</button>
-                            <span>1</span>
-                            <button type="button">+</button>
-                        </div>
-                        <div class="price-box">
-                            <span class="price">$42.000</span>
-                            <small>subtotal</small>
-                        </div>
-                    </div>
-                </div>
-            </article>
+            <!-- Estado Vacío -->
+            <section id="seccion-carrito-vacio" class="estado-vacio">
+                <div class="icono-estado-vacio">🛍️</div>
+                <h2 class="titulo-estado-vacio">Tu carrito está vacío</h2>
+                <p class="descripcion-estado-vacio">
+                    Aún no has agregado prendas de vestir a tu compra. ¡Revisa nuestra colección de ropa y viste los colores de Campus!
+                </p>
+                <a href="catalogo.html" class="boton-primario">Explorar Catálogo de Ropa</a>
+            </section>
 
-        </section>
+            <!-- Lista de Prendas en el Carrito -->
+            <div id="seccion-carrito-lleno">
+                <a href="vacio.html" class="enlace-peligro" style="display: block; text-align: right; margin-bottom: 8px;">Vaciar carrito</a>
+                <section class="lista-carrito">
 
-        <!-- Resumen de Pedido -->
-        <section class="cart-summary">
-            <div class="summary-row">
-                <span>Subtotal</span>
-                <span>$109.000</span>
+                    <!-- Prenda 1 -->
+                    <article class="item-carrito item-1">
+                        <img src="img/sudadera_con_capucha_gris.webp" alt="Sudadera Capucha Gris" class="imagen-carrito">
+                        <div class="detalles-item-carrito">
+                            <div class="cabecera-item-carrito">
+                                <h3>Sudadera Capucha Gris</h3>
+                                <label for="eliminar-item-1" class="boton-eliminar" title="Eliminar producto">🗑️</label>
+                            </div>
+                            <span class="referencia-item">Ref: #ROPA-67890</span>
+
+                            <div class="opciones-item-carrito">
+                                <select class="select-carrito" aria-label="Seleccionar talla">
+                                    <option value="S">Talla S</option>
+                                    <option value="M" selected>Talla M</option>
+                                    <option value="L">Talla L</option>
+                                    <option value="XL">Talla XL</option>
+                                </select>
+                                <select class="select-carrito" aria-label="Seleccionar cantidad">
+                                    <option value="1" selected>Cant: 1</option>
+                                    <option value="2">Cant: 2</option>
+                                    <option value="3">Cant: 3</option>
+                                </select>
+                            </div>
+
+                            <div class="pie-item-carrito">
+                                <span>Precio</span>
+                                <span class="precio-producto">$45.000</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Prenda 2 -->
+                    <article class="item-carrito item-2">
+                        <img src="img/Camiseta basica blanca.webp" alt="Camiseta Básica Blanca" class="imagen-carrito">
+                        <div class="detalles-item-carrito">
+                            <div class="cabecera-item-carrito">
+                                <h3>Camiseta Básica Blanca</h3>
+                                <label for="eliminar-item-2" class="boton-eliminar" title="Eliminar producto">🗑️</label>
+                            </div>
+                            <span class="referencia-item">Ref: #ROPA-12345</span>
+
+                            <div class="opciones-item-carrito">
+                                <select class="select-carrito" aria-label="Seleccionar talla">
+                                    <option value="S">Talla S</option>
+                                    <option value="M">Talla M</option>
+                                    <option value="L" selected>Talla L</option>
+                                    <option value="XL">Talla XL</option>
+                                </select>
+                                <select class="select-carrito" aria-label="Seleccionar cantidad">
+                                    <option value="1" selected>Cant: 1</option>
+                                    <option value="2">Cant: 2</option>
+                                    <option value="3">Cant: 3</option>
+                                </select>
+                            </div>
+
+                            <div class="pie-item-carrito">
+                                <span>Precio</span>
+                                <span class="precio-producto">$22.000</span>
+                            </div>
+                        </div>
+                    </article>
+
+                </section>
+
+                <a href="catalogo.html" class="boton-lineas" style="margin-top: 14px;">+ Agregar más prendas</a>
+
+                <!-- Resumen de Pago -->
+                <section class="resumen-compra" style="margin-top: 14px;">
+                    <div class="fila-resumen">
+                        <span>Subtotal</span>
+                        <span>$67.000</span>
+                    </div>
+                    <div class="fila-resumen">
+                        <span>Impuestos (19%)</span>
+                        <span>$12.730</span>
+                    </div>
+                    <div class="fila-resumen fila-total">
+                        <span>Total</span>
+                        <span>$79.730</span>
+                    </div>
+
+                    <a href="checkout.html" class="boton-primario" style="margin-top: 8px;">Proceder al Pago</a>
+                </section>
             </div>
-            <div class="summary-row">
-                <span>Impuestos</span>
-                <span>$18.330</span>
-            </div>
-            <hr class="summary-divider">
-            <div class="summary-row total-row">
-                <span>Total</span>
-                <span>$127.330</span>
-            </div>
 
-            <a href="checkout.html" class="btn-primary">Proceder al Pago</a>
-        </section>
-    </main>
+        </main>
 
+        <nav class="navegacion-inferior">
+            <ul class="lista-navegacion-inferior">
+                <li>
+                    <a href="index.html" class="enlace-navegacion">
+                        <span class="icono-navegacion">🏠</span>
+                        <span class="texto-navegacion">Inicio</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="catalogo.html" class="enlace-navegacion">
+                        <span class="icono-navegacion">🏷️</span>
+                        <span class="texto-navegacion">Catálogo</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="carrito.html" class="enlace-navegacion activo">
+                        <span class="icono-navegacion">🛒</span>
+                        <span class="texto-navegacion">Carrito</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="historial.html" class="enlace-navegacion">
+                        <span class="icono-navegacion">📦</span>
+                        <span class="texto-navegacion">Pedidos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="perfil.html" class="enlace-navegacion">
+                        <span class="icono-navegacion">👤</span>
+                        <span class="texto-navegacion">Perfil</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
 </body>
-
 </html>

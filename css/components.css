@@ -1,32 +1,36 @@
 /* ==========================================================================
-   COMPONENTS.CSS - Componentes reutilizables (Modo Aprendiz Front-End)
+   COMPONENTS.CSS - Componentes de CampusShop
    ========================================================================== */
 
-/* 1. Menú lateral con truco del checkbox (Sin JavaScript) */
-/* El checkbox oculto activa el menú lateral al cambiar su estado a :checked */
+/* 1. Menú lateral */
 .interruptor-menu { display: none; }
 
 .fondo-oscuro {
     position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.4);
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
     display: none;
-    z-index: 20;
+    z-index: 90;
 }
 
 .menu-lateral {
     position: fixed;
     top: 0;
-    left: -260px;
-    width: 250px;
+    left: -100%;
+    width: 270px;
+    max-width: 80%;
     height: 100%;
     background: var(--color-tarjeta);
     padding: 20px;
     display: flex;
     flex-direction: column;
     gap: 15px;
-    transition: left 0.3s;
-    z-index: 30;
+    transition: left 0.3s ease;
+    z-index: 100;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.15);
 }
 
 .cabecera-menu-lateral {
@@ -37,11 +41,21 @@
     padding-bottom: 8px;
 }
 
+.cabecera-menu-lateral h2 { font-size: 1.1rem; }
+
+.boton-cerrar-menu {
+    cursor: pointer;
+    font-size: 1.5rem;
+    line-height: 1;
+    padding: 0 4px;
+}
+
 .navegacion-menu-lateral a {
     display: block;
-    padding: 8px 0;
+    padding: 10px 0;
     border-bottom: 1px solid #f3f4f6;
-    font-weight: bold;
+    font-weight: 500;
+    font-size: 0.95rem;
 }
 
 #interruptor-menu:checked ~ .fondo-oscuro { display: block; }
@@ -57,6 +71,8 @@
     text-align: center;
     border-radius: var(--radio);
     font-weight: bold;
+    border: none;
+    cursor: pointer;
 }
 
 .boton-lineas {
@@ -94,11 +110,11 @@
     color: var(--color-peligro);
     font-size: 0.85rem;
 }
-.boton-eliminar { font-size: 1.1rem; opacity: 0.7; }
+.boton-eliminar { font-size: 1.1rem; opacity: 0.7; cursor: pointer; border: none; background: none; }
 .enlace-texto { color: var(--color-primario); font-size: 0.85rem; font-weight: bold; }
 .enlace-peligro { color: var(--color-peligro); font-size: 0.8rem; font-weight: bold; }
 
-/* 3. Icono del carrito con contador */
+/* 3. Icono del carrito */
 .contenedor-icono-carrito { position: relative; font-size: 1.3rem; }
 .insignia-carrito {
     position: absolute;
@@ -140,8 +156,39 @@
     margin-bottom: 4px;
 }
 
-.boton-filtro { padding: 6px 14px; background: #f3f4f6; border-radius: 20px; font-size: 0.8rem; white-space: nowrap; }
-.boton-filtro.activo { background: var(--color-primario); color: white; }
+.boton-filtro {
+    padding: 6px 14px;
+    background: #f3f4f6;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: background 0.2s, color 0.2s;
+    user-select: none;
+    display: inline-block;
+}
+
+/* Filtros por Categoría */
+.control-filtro { display: none; }
+
+#filtro-todos:checked ~ main .etiqueta-todos,
+#filtro-sudaderas:checked ~ main .etiqueta-sudaderas,
+#filtro-camisetas:checked ~ main .etiqueta-camisetas,
+#filtro-chaquetas:checked ~ main .etiqueta-chaquetas,
+#filtro-pantalones:checked ~ main .etiqueta-pantalones,
+#filtro-polos:checked ~ main .etiqueta-polos {
+    background: var(--color-primario);
+    color: white;
+}
+
+#filtro-sudaderas:checked ~ main .cuadricula-productos .tarjeta-producto:not(.prenda-sudadera),
+#filtro-camisetas:checked ~ main .cuadricula-productos .tarjeta-producto:not(.prenda-camiseta),
+#filtro-chaquetas:checked ~ main .cuadricula-productos .tarjeta-producto:not(.prenda-chaqueta),
+#filtro-pantalones:checked ~ main .cuadricula-productos .tarjeta-producto:not(.prenda-pantalon),
+#filtro-polos:checked ~ main .cuadricula-productos .tarjeta-producto:not(.prenda-polo) {
+    display: none;
+}
 
 /* 5. Tarjetas de ropa en cuadrícula */
 .cuadricula-productos {
@@ -157,6 +204,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    background: var(--color-tarjeta);
 }
 
 .caja-imagen-producto {
@@ -166,6 +214,16 @@
     align-items: center;
     justify-content: center;
     padding: 8px;
+    overflow: hidden;
+}
+
+.imagen-producto {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
 }
 
 .informacion-producto { padding: 10px; display: flex; flex-direction: column; gap: 3px; }
@@ -181,24 +239,60 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.detalle-imagen {
+    max-width: 100%;
+    max-height: 210px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
 }
 
 .detalle-informacion { display: flex; flex-direction: column; gap: 10px; }
 .detalle-precio { font-size: 1.4rem; font-weight: bold; color: var(--color-primario); }
 .detalle-descripcion { font-size: 0.85rem; color: var(--color-gris); }
+
 .selector-tallas { display: flex; gap: 8px; margin: 6px 0; }
+.input-talla { display: none; }
 .opcion-talla {
-    width: 36px;
-    height: 36px;
+    width: 38px;
+    height: 38px;
     border: 1px solid var(--color-borde);
-    border-radius: 6px;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.2s, color 0.2s;
 }
-.opcion-talla.seleccionada { background: var(--color-primario); color: white; }
-.fila-compra { display: flex; gap: 10px; align-items: center; }
+.input-talla:checked + .opcion-talla { background: var(--color-primario); color: white; }
+
+.fila-compra { display: flex; gap: 10px; align-items: center; margin-top: 8px; }
+.selector-cantidad {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #f8f9fa;
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    padding: 6px 10px;
+}
+.etiqueta-cantidad { font-size: 0.85rem; font-weight: bold; color: var(--color-gris); }
+.input-cantidad {
+    width: 45px;
+    border: none;
+    background: transparent;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.95rem;
+    outline: none;
+}
 
 /* 7. Carrito de compras */
 .lista-carrito { display: flex; flex-direction: column; gap: 12px; }
@@ -208,20 +302,56 @@
     border: 1px solid var(--color-borde);
     border-radius: var(--radio);
     padding: 10px;
+    background: var(--color-tarjeta);
+    align-items: center;
 }
 
-.imagen-carrito { width: 75px; height: 75px; border-radius: 8px; object-fit: cover; }
+.imagen-carrito {
+    width: 75px;
+    height: 75px;
+    border-radius: 8px;
+    object-fit: cover;
+    flex-shrink: 0;
+    background: #f8f9fa;
+}
+
 .detalles-item-carrito { flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
 .cabecera-item-carrito { display: flex; justify-content: space-between; font-size: 0.9rem; font-weight: bold; }
 .referencia-item { font-size: 0.7rem; color: var(--color-gris); }
 .pie-item-carrito { display: flex; justify-content: space-between; align-items: center; }
-.selector-cantidad {
+
+.opciones-item-carrito {
     display: flex;
+    gap: 8px;
     align-items: center;
-    gap: 6px;
-    background: #f3f4f6;
-    border-radius: 15px;
-    padding: 2px 8px;
+    margin: 6px 0;
+}
+
+.select-carrito {
+    padding: 4px 8px;
+    border: 1px solid var(--color-borde);
+    border-radius: 6px;
+    background: #f8f9fa;
+    font-size: 0.8rem;
+    color: var(--color-texto);
+    cursor: pointer;
+}
+
+/* Eliminación de prendas */
+.control-eliminar { display: none; }
+#seccion-carrito-vacio { display: none; }
+
+#eliminar-item-1:not(:checked) ~ main .item-1,
+#eliminar-item-2:not(:checked) ~ main .item-2 {
+    display: none;
+}
+
+#eliminar-item-1:not(:checked) ~ #eliminar-item-2:not(:checked) ~ main #seccion-carrito-lleno {
+    display: none;
+}
+
+#eliminar-item-1:not(:checked) ~ #eliminar-item-2:not(:checked) ~ main #seccion-carrito-vacio {
+    display: flex;
 }
 
 .resumen-compra {
@@ -259,7 +389,7 @@
     margin-bottom: 8px;
 }
 
-/* 9. Perfil, Pedidos y Estado Vacío */
+/* 9. Perfil y Pedidos */
 .tarjeta-usuario {
     display: flex;
     align-items: center;

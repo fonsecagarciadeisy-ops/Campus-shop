@@ -15,14 +15,14 @@
         <header class="encabezado-superior encabezado-secundario">
             <a href="catalogo.html" class="boton-volver" aria-label="Volver al catálogo">←</a>
             <h1 class="titulo-pantalla">Detalle de Prenda</h1>
-            <a href="carrito.html" class="contenedor-icono-carrito" aria-label="Ver mi carrito">
-                🛒<span class="insignia-carrito">3</span>
+            <a href="vacio.html" class="contenedor-icono-carrito" aria-label="Ver mi carrito">
+                🛒
             </a>
         </header>
 
         <main>
             <section class="detalle-caja-imagen">
-                <img src="img/sudadera.png" alt="Sudadera con Capucha Gris" class="detalle-imagen">
+                <img src="img/sudadera_con_capucha_gris.webp" alt="Sudadera con Capucha Gris" class="detalle-imagen">
             </section>
 
             <article class="detalle-informacion">
@@ -40,24 +40,32 @@
                     Sudadera confeccionada en algodón perchado de alta densidad. Cuenta con cordón ajustable, bolsillo canguro y escudo bordado de Campus en el pecho. Ideal para clima templado y frío.
                 </p>
 
-                <div>
-                    <h3 class="titulo-opciones">Selecciona tu Talla</h3>
-                    <div class="selector-tallas">
-                        <span class="opcion-talla">S</span>
-                        <span class="opcion-talla seleccionada">M</span>
-                        <span class="opcion-talla">L</span>
-                        <span class="opcion-talla">XL</span>
-                    </div>
-                </div>
+                <form action="carrito.html" method="GET">
+                    <div>
+                        <h3 class="titulo-opciones">Selecciona tu Talla</h3>
+                        <div class="selector-tallas">
+                            <input type="radio" name="talla" id="talla-s" value="S" class="input-talla">
+                            <label for="talla-s" class="opcion-talla">S</label>
 
-                <div class="fila-compra">
-                    <div class="selector-cantidad">
-                        <button type="button" class="boton-cantidad" aria-label="Disminuir cantidad">-</button>
-                        <span class="valor-cantidad">1</span>
-                        <button type="button" class="boton-cantidad" aria-label="Aumentar cantidad">+</button>
+                            <input type="radio" name="talla" id="talla-m" value="M" class="input-talla" checked>
+                            <label for="talla-m" class="opcion-talla">M</label>
+
+                            <input type="radio" name="talla" id="talla-l" value="L" class="input-talla">
+                            <label for="talla-l" class="opcion-talla">L</label>
+
+                            <input type="radio" name="talla" id="talla-xl" value="XL" class="input-talla">
+                            <label for="talla-xl" class="opcion-talla">XL</label>
+                        </div>
                     </div>
-                    <a href="carrito.html" class="boton-primario">Añadir al Carrito</a>
-                </div>
+
+                    <div class="fila-compra">
+                        <div class="selector-cantidad">
+                            <label for="cantidad" class="etiqueta-cantidad">Cant:</label>
+                            <input type="number" id="cantidad" name="cantidad" value="1" min="1" max="10" class="input-cantidad">
+                        </div>
+                        <button type="submit" class="boton-primario">Añadir al Carrito</button>
+                    </div>
+                </form>
             </article>
         </main>
 
@@ -76,7 +84,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="carrito.html" class="enlace-navegacion">
+                    <a href="vacio.html" class="enlace-navegacion">
                         <span class="icono-navegacion">🛒</span>
                         <span class="texto-navegacion">Carrito</span>
                     </a>
