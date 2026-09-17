@@ -1,11 +1,8 @@
-/* ==========================================================================
-   LAYOUT.CSS - Estructura principal de la app móvil
-   ========================================================================== */
-
-/* 1. Contenedor principal con tamaño de celular */
+/*Estrucutura principal de los telefonos*/
+/* 1. Contenedor principal */
 .contenedor-app {
     width: 100%;
-    max-width: 480px;
+    max-width: 100%;
     min-height: 100vh;
     margin: 0 auto;
     background-color: var(--color-tarjeta);
@@ -51,18 +48,18 @@ main {
     display: flex;
     flex-direction: column;
     gap: 16px;
+    align-content: start;
 }
 
 /* 4. Menú inferior fijo */
 .navegacion-inferior {
     position: fixed;
     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
     width: 100%;
-    max-width: 480px;
     background-color: var(--color-tarjeta);
     border-top: 1px solid var(--color-borde);
+    box-shadow: 0 -2px 10px rgba(15, 23, 42, 0.04);
     z-index: 10;
 }
 

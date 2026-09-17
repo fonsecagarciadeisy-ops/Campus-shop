@@ -19,59 +19,72 @@
 
         <main>
             <section class="seccion-formulario">
-                <form action="historial.html" method="GET">
+                <form action="historial.html" method="GET" class="cuadricula-checkout">
                     
-                    <h2 class="titulo-seccion">📍 Datos de Entrega</h2>
-                    
-                    <div class="grupo-formulario">
-                        <label class="etiqueta-formulario" for="nombre">Nombre Completo</label>
-                        <input class="campo-formulario" type="text" id="nombre" placeholder="Ej: Camilo Pérez" required>
-                    </div>
-
-                    <div class="grupo-formulario">
-                        <label class="etiqueta-formulario" for="direccion">Dirección de Entrega / Salón Campus</label>
-                        <input class="campo-formulario" type="text" id="direccion" placeholder="Ej: Calle 45 #20-15 o Aula 302" required>
-                    </div>
-
-                    <div class="fila-formulario">
-                        <div class="grupo-formulario columna-formulario">
-                            <label class="etiqueta-formulario" for="ciudad">Ciudad</label>
-                            <input class="campo-formulario" type="text" id="ciudad" value="Bucaramanga" required>
+                    <div class="columna-datos-entrega">
+                        <h2 class="titulo-seccion">📍 Datos de Entrega</h2>
+                        
+                        <div class="grupo-formulario">
+                            <label class="etiqueta-formulario" for="nombre">Nombre Completo</label>
+                            <input class="campo-formulario" type="text" id="nombre" placeholder="Ej: Camilo Pérez" required>
                         </div>
-                        <div class="grupo-formulario columna-formulario">
-                            <label class="etiqueta-formulario" for="telefono">Teléfono</label>
-                            <input class="campo-formulario" type="tel" id="telefono" placeholder="310 000 0000" required>
+
+                        <div class="grupo-formulario">
+                            <label class="etiqueta-formulario" for="direccion">Dirección de Entrega / Salón Campus</label>
+                            <input class="campo-formulario" type="text" id="direccion" placeholder="Ej: Calle 45 #20-15 o Aula 302" required>
                         </div>
-                    </div>
 
-                    <h2 class="titulo-seccion">💳 Método de Pago</h2>
-                    
-                    <div class="opciones-pago">
-                        <label class="opcion-pago">
-                            <input type="radio" name="pago" value="tarjeta" checked>
-                            <span class="icono-pago">💳</span>
-                            <span>Tarjeta Débito / Crédito</span>
-                        </label>
-                        <label class="opcion-pago">
-                            <input type="radio" name="pago" value="nequi">
-                            <span class="icono-pago">📱</span>
-                            <span>Nequi / Daviplata</span>
-                        </label>
-                        <label class="opcion-pago">
-                            <input type="radio" name="pago" value="efectivo">
-                            <span class="icono-pago">💵</span>
-                            <span>Pago en Efectivo en Recepción</span>
-                        </label>
-                    </div>
+                        <div class="fila-formulario">
+                            <div class="grupo-formulario columna-formulario">
+                                <label class="etiqueta-formulario" for="ciudad">Ciudad</label>
+                                <input class="campo-formulario" type="text" id="ciudad" value="Bucaramanga" required>
+                            </div>
+                            <div class="grupo-formulario columna-formulario">
+                                <label class="etiqueta-formulario" for="telefono">Teléfono</label>
+                                <input class="campo-formulario" type="tel" id="telefono" placeholder="310 000 0000" required>
+                            </div>
+                        </div>
 
-                    <div class="resumen-compra">
-                        <div class="fila-resumen fila-total">
-                            <span>Total a Cobrar</span>
-                            <span>$79.730</span>
+                        <h2 class="titulo-seccion" style="margin-top: 14px;">💳 Método de Pago</h2>
+                        
+                        <div class="opciones-pago">
+                            <label class="opcion-pago">
+                                <input type="radio" name="pago" value="tarjeta" checked>
+                                <span class="icono-pago">💳</span>
+                                <span>Tarjeta Débito / Crédito</span>
+                            </label>
+                            <label class="opcion-pago">
+                                <input type="radio" name="pago" value="nequi">
+                                <span class="icono-pago">📱</span>
+                                <span>Nequi / Daviplata</span>
+                            </label>
+                            <label class="opcion-pago">
+                                <input type="radio" name="pago" value="efectivo">
+                                <span class="icono-pago">💵</span>
+                                <span>Pago en Efectivo en Recepción</span>
+                            </label>
                         </div>
                     </div>
 
-                    <button type="submit" class="boton-primario">Confirmar Pedido</button>
+                    <div class="columna-resumen-confirmacion">
+                        <h2 class="titulo-seccion">🧾 Resumen del Pedido</h2>
+                        <div class="resumen-compra">
+                            <div class="fila-resumen">
+                                <span>Subtotal productos</span>
+                                <span>$79.730</span>
+                            </div>
+                            <div class="fila-resumen">
+                                <span>Envío campus</span>
+                                <span class="texto-exito">Gratis</span>
+                            </div>
+                            <div class="fila-resumen fila-total">
+                                <span>Total a Cobrar</span>
+                                <span>$79.730</span>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="boton-primario" style="margin-top: 12px;">Confirmar Pedido</button>
+                    </div>
                 </form>
             </section>
         </main>

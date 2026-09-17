@@ -1,19 +1,247 @@
-/* ==========================================================================
-   RESPONSIVE.CSS - Vista enmarcada para pantallas grandes
-   ========================================================================== */
+/* 1. TABLET Y PANTALLAS MEDIANAS (640px a 1023px) */
+@media (min-width: 640px) {
+    /* Cuadrícula de productos a 3 columnas */
+    .cuadricula-productos {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+    }
 
-/* En computadores o tablets, centramos la app como un teléfono */
-@media (min-width: 500px) {
+    .caja-imagen-producto {
+        height: 160px;
+    }
+
+    /* Categorías y filtros */
+    .contenedor-categorias {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+        overflow-x: visible;
+    }
+
+    .caja-icono-categoria {
+        width: 100%;
+        height: 68px;
+        font-size: 1.8rem;
+    }
+
+    .contenedor-filtros {
+        flex-wrap: wrap;
+        overflow-x: visible;
+        gap: 8px;
+    }
+
+    /* Detalle de producto en 2 columnas */
+    .main-detalle,
+    main:has(.detalle-caja-imagen) {
+        display: grid;
+        grid-template-columns: 1fr 1.1fr;
+        gap: 28px;
+        align-items: start;
+    }
+
+    .detalle-caja-imagen {
+        height: 350px;
+    }
+
+    .detalle-imagen {
+        max-height: 310px;
+    }
+
+    /* Carrito: prendas a la izquierda, resumen sticky a la derecha */
+    #seccion-carrito-lleno {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        gap: 20px;
+        align-items: start;
+    }
+
+    #seccion-carrito-lleno > .enlace-peligro { grid-column: 1 / -1; }
+    #seccion-carrito-lleno > .lista-carrito { grid-column: 1; }
+    #seccion-carrito-lleno > .boton-lineas { grid-column: 1; margin: 0 !important; }
+    #seccion-carrito-lleno > .resumen-compra { grid-column: 2; grid-row: 2; margin: 0 !important; position: sticky; top: 80px; }
+    #seccion-carrito-lleno > .boton-primario { grid-column: 2; grid-row: 3; margin: 0 !important; }
+
+    /* Checkout en 2 columnas */
+    .cuadricula-checkout {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr;
+        gap: 24px;
+        align-items: start;
+    }
+
+    .columna-resumen-confirmacion {
+        position: sticky;
+        top: 80px;
+    }
+
+    /* Historial y Perfil en 2 columnas */
+    .main-historial,
+    main:has(.tarjeta-pedido) {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 16px;
+        align-content: start;
+        align-items: start;
+    }
+
+    .main-perfil,
+    main:has(.tarjeta-usuario) {
+        display: grid;
+        grid-template-columns: 1fr 1.3fr;
+        gap: 20px;
+        align-content: start;
+        align-items: start;
+    }
+
+    .main-perfil .boton-lineas,
+    main:has(.tarjeta-usuario) .boton-lineas {
+        grid-column: 1 / -1;
+        max-width: 280px;
+        margin: 0 auto;
+    }
+
+    /* Menú inferior con texto en línea */
+    .enlace-navegacion {
+        flex-direction: row;
+        gap: 6px;
+        font-size: 0.85rem;
+    }
+}
+
+/* 2. PANTALLA DE COMPUTADOR COMPLETA (1024px en adelante) */
+@media (min-width: 1024px) {
+    /* Pantalla completa sin bordes de celular */
     body {
-        background-color: #e5e7eb;
-        display: flex;
-        justify-content: center;
-        padding: 20px 0;
+        background-color: var(--color-fondo);
+        padding: 0;
+        margin: 0;
     }
 
     .contenedor-app {
-        border-radius: 20px;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        border: 1px solid var(--color-borde);
+        width: 100%;
+        max-width: 100%;
+        min-height: 100vh;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        padding-bottom: 85px;
+    }
+
+    /* Encabezado amplio de escritorio */
+    .encabezado-superior {
+        width: 100%;
+        padding: 16px 48px;
+        border-bottom: 1px solid var(--color-borde);
+        background-color: var(--color-tarjeta);
+    }
+
+    .logotipo {
+        font-size: 1.5rem;
+    }
+
+    .titulo-pantalla {
+        font-size: 1.3rem;
+    }
+
+    /* Contenido centralizado con ancho máximo cómodo */
+    main {
+        width: 100%;
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 32px 48px;
+        gap: 32px;
+    }
+
+    /* Buscador centrado */
+    .seccion-busqueda {
+        display: flex;
+        justify-content: center;
+    }
+
+    .barra-busqueda {
+        width: 100%;
+        max-width: 650px;
+        padding: 12px 18px;
+    }
+
+    /* Catálogo a 4 columnas en Computador */
+    .cuadricula-productos {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    .caja-imagen-producto {
+        height: 175px;
+    }
+
+    .nombre-producto {
+        font-size: 0.92rem;
+    }
+
+    .precio-producto {
+        font-size: 1.05rem;
+    }
+
+    /* Detalle de producto amplio */
+    .detalle-caja-imagen {
+        height: 420px;
+    }
+
+    .detalle-imagen {
+        max-height: 370px;
+    }
+
+    /* Historial en Computador a 3 columnas equilibradas */
+    .main-historial,
+    main:has(.tarjeta-pedido) {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+        align-content: start;
+        align-items: start;
+    }
+
+    /* Perfil en Computador */
+    .main-perfil,
+    main:has(.tarjeta-usuario) {
+        max-width: 900px;
+        margin: 0 auto;
+        grid-template-columns: 1fr 1.6fr;
+        gap: 32px;
+    }
+
+    /* Carrito y Checkout centrados en Computador */
+    #seccion-carrito-lleno,
+    .cuadricula-checkout {
+        max-width: 1050px;
+        margin: 0 auto;
+    }
+
+    /* Barra inferior de navegación completa para escritorio */
+    .navegacion-inferior {
+        width: 100%;
+        max-width: 100%;
+        left: 0;
+        transform: none;
+        background-color: var(--color-tarjeta);
+        border-top: 1px solid var(--color-borde);
+    }
+
+    .lista-navegacion-inferior {
+        max-width: 850px;
+        margin: 0 auto;
+        justify-content: space-around;
+        padding: 12px 24px;
+    }
+
+    .enlace-navegacion {
+        padding: 8px 18px;
+        border-radius: 8px;
+        font-size: 0.95rem;
+        transition: background 0.2s, color 0.2s;
+    }
+
+    .enlace-navegacion:hover {
+        background: var(--color-acento);
+        color: var(--color-primario);
     }
 }

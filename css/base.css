@@ -1,17 +1,21 @@
-/* ==========================================================================
-   BASE.CSS - Variables y reseteo básico de la página
-   ========================================================================== */
-
+/*Variables de Resteo*/
 /* 1. Variables globales */
 :root {
-    --color-primario: #1b4332;
-    --color-acento: #d8f3dc;
-    --color-fondo: #f8f9fa;
+    --color-primario: #4f46e5;
+    --color-primario-hover: #4338ca;
+    --color-acento: #ede9fe;
+    --color-acento-texto: #4338ca;
+    --color-fondo: #f8fafc;
     --color-tarjeta: #ffffff;
-    --color-texto: #1f2937;
-    --color-gris: #6b7280;
-    --color-borde: #e5e7eb;
+    --color-texto: #0f172a;
+    --color-gris: #64748b;
+    --color-gris-claro: #f1f5f9;
+    --color-borde: #e2e8f0;
+    --color-peligro: #ef4444;
+    --color-exito: #10b981;
     --radio: 12px;
+    --sombra-suave: 0 3px 10px rgba(79, 70, 229, 0.06), 0 1px 3px rgba(15, 23, 42, 0.04);
+    --sombra-elevada: 0 8px 20px rgba(79, 70, 229, 0.1), 0 2px 6px rgba(15, 23, 42, 0.04);
 }
 
 /* 2. Reseteo de márgenes y caja */

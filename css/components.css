@@ -1,7 +1,3 @@
-/* ==========================================================================
-   COMPONENTS.CSS - Componentes de CampusShop
-   ========================================================================== */
-
 /* 1. Menú lateral */
 .interruptor-menu { display: none; }
 
@@ -30,7 +26,7 @@
     gap: 15px;
     transition: left 0.3s ease;
     z-index: 100;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.15);
+    box-shadow: 4px 0 20px rgba(15, 23, 42, 0.12);
 }
 
 .cabecera-menu-lateral {
@@ -53,9 +49,14 @@
 .navegacion-menu-lateral a {
     display: block;
     padding: 10px 0;
-    border-bottom: 1px solid #f3f4f6;
+    border-bottom: 1px solid var(--color-gris-claro);
     font-weight: 500;
     font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+.navegacion-menu-lateral a:hover {
+    color: var(--color-primario);
 }
 
 #interruptor-menu:checked ~ .fondo-oscuro { display: block; }
@@ -73,6 +74,11 @@
     font-weight: bold;
     border: none;
     cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.boton-primario:hover {
+    background: var(--color-primario-hover);
 }
 
 .boton-lineas {
@@ -81,9 +87,15 @@
     padding: 10px;
     border: 2px solid var(--color-primario);
     color: var(--color-primario);
+    background: transparent;
     text-align: center;
     border-radius: var(--radio);
     font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+.boton-lineas:hover {
+    background: var(--color-acento);
 }
 
 .boton-volver {
@@ -92,9 +104,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #f3f4f6;
+    background: var(--color-gris-claro);
+    color: var(--color-texto);
     border-radius: 8px;
     font-weight: bold;
+    border: 1px solid var(--color-borde);
+    transition: background 0.2s, color 0.2s;
+}
+
+.boton-volver:hover {
+    background: var(--color-acento);
+    color: var(--color-primario);
 }
 
 .boton-accion-pequeno { padding: 6px; font-size: 0.8rem; margin-top: 4px; }
@@ -133,9 +153,16 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    background: #f3f4f6;
-    padding: 10px;
+    background: var(--color-gris-claro);
+    padding: 10px 12px;
+    border: 1px solid var(--color-borde);
     border-radius: var(--radio);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.barra-busqueda:focus-within {
+    border-color: var(--color-primario);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12);
 }
 
 .campo-busqueda { width: 100%; border: none; background: transparent; outline: none; }
@@ -147,24 +174,34 @@
 .caja-icono-categoria {
     width: 55px;
     height: 55px;
-    background: #f3f4f6;
+    background: var(--color-gris-claro);
+    border: 1px solid var(--color-borde);
     border-radius: var(--radio);
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.4rem;
     margin-bottom: 4px;
+    box-shadow: var(--sombra-suave);
+    transition: transform 0.2s, background 0.2s, border-color 0.2s;
+}
+
+.tarjeta-categoria:hover .caja-icono-categoria {
+    transform: translateY(-2px);
+    background: var(--color-acento);
+    border-color: var(--color-primario);
 }
 
 .boton-filtro {
     padding: 6px 14px;
-    background: #f3f4f6;
+    background: var(--color-gris-claro);
+    color: var(--color-texto);
     border-radius: 20px;
     font-size: 0.8rem;
     white-space: nowrap;
     cursor: pointer;
-    border: 1px solid transparent;
-    transition: background 0.2s, color 0.2s;
+    border: 1px solid var(--color-borde);
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
     user-select: none;
     display: inline-block;
 }
@@ -180,6 +217,7 @@
 #filtro-polos:checked ~ main .etiqueta-polos {
     background: var(--color-primario);
     color: white;
+    border-color: var(--color-primario);
 }
 
 #filtro-sudaderas:checked ~ main .cuadricula-productos .tarjeta-producto:not(.prenda-sudadera),
@@ -204,16 +242,24 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    height: 100%;
     background: var(--color-tarjeta);
+    box-shadow: var(--sombra-suave);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tarjeta-producto:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--sombra-elevada);
 }
 
 .caja-imagen-producto {
-    height: 130px;
-    background: #f8f9fa;
+    height: 140px;
+    background: var(--color-fondo);
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 8px;
+    padding: 10px;
     overflow: hidden;
 }
 
@@ -224,17 +270,61 @@
     height: auto;
     object-fit: contain;
     display: block;
+    transition: transform 0.25s ease;
 }
 
-.informacion-producto { padding: 10px; display: flex; flex-direction: column; gap: 3px; }
-.categoria-producto { font-size: 0.7rem; color: var(--color-gris); text-transform: uppercase; }
-.nombre-producto { font-size: 0.85rem; font-weight: bold; }
-.precio-producto { font-size: 0.95rem; font-weight: bold; color: var(--color-primario); }
+.tarjeta-producto:hover .imagen-producto {
+    transform: scale(1.05);
+}
+
+.informacion-producto {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.categoria-producto {
+    font-size: 0.7rem;
+    color: var(--color-gris);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+}
+
+.nombre-producto {
+    font-size: 0.88rem;
+    font-weight: 600;
+    line-height: 1.35;
+    margin-bottom: 6px;
+    min-height: 2.7em;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.precio-producto {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-primario);
+    margin-top: auto;
+    margin-bottom: 8px;
+}
+
+.boton-accion-pequeno {
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 0.82rem;
+    border-radius: 8px;
+}
 
 /* 6. Detalle de prenda */
 .detalle-caja-imagen {
     height: 230px;
-    background: #f8f9fa;
+    background: var(--color-fondo);
+    border: 1px solid var(--color-borde);
+    box-shadow: var(--sombra-suave);
     border-radius: var(--radio);
     display: flex;
     align-items: center;
@@ -269,16 +359,21 @@
     font-weight: bold;
     cursor: pointer;
     user-select: none;
-    transition: background 0.2s, color 0.2s;
+    background: var(--color-tarjeta);
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
 }
-.input-talla:checked + .opcion-talla { background: var(--color-primario); color: white; }
+.input-talla:checked + .opcion-talla {
+    background: var(--color-primario);
+    color: white;
+    border-color: var(--color-primario);
+}
 
 .fila-compra { display: flex; gap: 10px; align-items: center; margin-top: 8px; }
 .selector-cantidad {
     display: flex;
     align-items: center;
     gap: 6px;
-    background: #f8f9fa;
+    background: var(--color-gris-claro);
     border: 1px solid var(--color-borde);
     border-radius: 8px;
     padding: 6px 10px;
@@ -303,6 +398,7 @@
     border-radius: var(--radio);
     padding: 10px;
     background: var(--color-tarjeta);
+    box-shadow: var(--sombra-suave);
     align-items: center;
 }
 
@@ -312,7 +408,8 @@
     border-radius: 8px;
     object-fit: cover;
     flex-shrink: 0;
-    background: #f8f9fa;
+    background: var(--color-fondo);
+    border: 1px solid var(--color-borde);
 }
 
 .detalles-item-carrito { flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
@@ -331,7 +428,7 @@
     padding: 4px 8px;
     border: 1px solid var(--color-borde);
     border-radius: 6px;
-    background: #f8f9fa;
+    background: var(--color-gris-claro);
     font-size: 0.8rem;
     color: var(--color-texto);
     cursor: pointer;
@@ -358,6 +455,8 @@
     border: 1px solid var(--color-borde);
     border-radius: var(--radio);
     padding: 14px;
+    background: var(--color-tarjeta);
+    box-shadow: var(--sombra-suave);
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -374,9 +473,25 @@
 .texto-exito { color: var(--color-exito); font-weight: bold; }
 
 /* 8. Formularios de Checkout */
+.cuadricula-checkout { display: flex; flex-direction: column; gap: 16px; }
+.columna-datos-entrega { display: flex; flex-direction: column; gap: 4px; }
+.columna-resumen-confirmacion { display: flex; flex-direction: column; gap: 8px; }
 .grupo-formulario { display: flex; flex-direction: column; gap: 4px; margin-bottom: 10px; }
 .etiqueta-formulario { font-size: 0.8rem; color: var(--color-gris); font-weight: bold; }
-.campo-formulario { padding: 10px; border: 1px solid var(--color-borde); border-radius: 8px; outline: none; }
+.campo-formulario {
+    padding: 10px;
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    background: var(--color-tarjeta);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.campo-formulario:focus {
+    border-color: var(--color-primario);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12);
+}
+
 .fila-formulario { display: flex; gap: 10px; }
 .columna-formulario { flex: 1; }
 .opcion-pago {
@@ -386,7 +501,15 @@
     padding: 10px;
     border: 1px solid var(--color-borde);
     border-radius: 8px;
+    background: var(--color-tarjeta);
+    box-shadow: var(--sombra-suave);
     margin-bottom: 8px;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.opcion-pago:hover {
+    border-color: var(--color-primario);
 }
 
 /* 9. Perfil y Pedidos */
@@ -394,7 +517,9 @@
     display: flex;
     align-items: center;
     gap: 12px;
-    background: #f8f9fa;
+    background: var(--color-tarjeta);
+    border: 1px solid var(--color-borde);
+    box-shadow: var(--sombra-suave);
     padding: 14px;
     border-radius: var(--radio);
 }
@@ -403,6 +528,7 @@
     width: 48px;
     height: 48px;
     background: var(--color-acento);
+    color: var(--color-primario);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -414,7 +540,7 @@
     font-size: 0.7rem;
     background: var(--color-acento);
     color: var(--color-primario);
-    padding: 2px 6px;
+    padding: 3px 8px;
     border-radius: 10px;
     font-weight: bold;
 }
@@ -426,23 +552,76 @@
     padding: 12px;
     border: 1px solid var(--color-borde);
     border-radius: 8px;
+    background: var(--color-tarjeta);
+    box-shadow: var(--sombra-suave);
     font-size: 0.9rem;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.opcion-menu-perfil:hover {
+    border-color: var(--color-primario);
+    background: var(--color-fondo);
 }
 
 .tarjeta-pedido {
     border: 1px solid var(--color-borde);
     border-radius: var(--radio);
-    padding: 12px;
+    padding: 16px 20px;
+    background: var(--color-tarjeta);
+    box-shadow: var(--sombra-suave);
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.cabecera-pedido { display: flex; justify-content: space-between; font-weight: bold; font-size: 0.9rem; }
-.insignia-pedido { padding: 2px 8px; border-radius: 10px; font-size: 0.7rem; }
-.insignia-pendiente { background: #fef3c7; color: #92400e; }
-.insignia-entregado { background: #d1fae5; color: #065f46; }
-.pie-pedido { display: flex; justify-content: space-between; font-weight: bold; font-size: 0.9rem; }
+.tarjeta-pedido:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--sombra-elevada);
+}
+
+.cabecera-pedido {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 0.95rem;
+    border-bottom: 1px solid var(--color-borde);
+    padding-bottom: 8px;
+}
+
+.codigo-pedido {
+    color: var(--color-texto);
+    letter-spacing: 0.5px;
+}
+
+.fecha-pedido {
+    font-size: 0.8rem;
+    color: var(--color-gris);
+}
+
+.descripcion-pedido {
+    font-size: 0.88rem;
+    line-height: 1.4;
+    color: var(--color-texto);
+    margin: 4px 0;
+}
+
+.pie-pedido {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 0.95rem;
+    margin-top: auto;
+    padding-top: 10px;
+    border-top: 1px dashed var(--color-borde);
+}
+
+.total-pedido {
+    color: var(--color-primario);
+    font-weight: 700;
+}
 
 .estado-vacio {
     text-align: center;
