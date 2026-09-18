@@ -115,11 +115,19 @@ Solo abre cualquiera de los archivos `.html` en tu navegador:
 
 
 
-| Numero | Maqueta                                          | col3                                             | Observaciones |
-| ------ | ------------------------------------------------ | ------------------------------------------------ | ------------- |
-| 1      | ![1789685744675](image/README/1789685744675.png) | ![1789685454372](image/README/1789685454372.png) |               |
-| 2      | ![1789685775857](image/README/1789685775857.png) | ![1789685562331](image/README/1789685562331.png) |               |
-| 3      | ![1789685800113](image/README/1789685800113.png) | ![1789685586943](image/README/1789685586943.png) |               |
-| 4      | ![1789685855458](image/README/1789685855458.png) | ![1789685617055](image/README/1789685617055.png) |               |
-| 5      | ![1789685919355](image/README/1789685919355.png) | ![1789685639469](image/README/1789685639469.png) |               |
-| 6      | ![1789685942691](image/README/1789685942691.png) | ![1789685669027](image/README/1789685669027.png) |               |
+# Numero
+Maqueta
+Resultado
+Observaciones del Resultado Real (Diseño e Interfaz)
+1![1789685744675](image/README/1789685744675.png)![1789692332554](image/README/1789692332554.png)Presenta un panel modal deslizable sobre fondo blanco con botón de cierre (`x`) en la esquina superior. Utiliza una lista vertical con íconos ilustrados a color y texto en tono oscuro para los enlaces ( *Inicio* ,  *Catálogo de Ropa* ,  *Mi Carrito* ,  *Mis Pedidos* ,  *Mi Perfil* ).
+2![1789685775857](image/README/1789685775857.png)![1789685562331](image/README/1789685562331.png)Encabezado blanco con título "CampusShop" e íconos de acción en color azul rey (`#4C43EC`). Incorpora una barra de búsqueda gris clara, botones tipo *pills* para categorías con íconos, tarjetas de productos en 2 columnas con precios en COP, botones azules "Ver detalle" y barra de navegación inferior ( *Bottom Nav* ) fija.
+3![1789685800113](image/README/1789685800113.png)![1789685586943](image/README/1789685586943.png)Barra superior con botón de retorno y título "Catálogo de Ropa". Incluye campo de búsqueda e historial de filtros horizontales con el estado activo "Todos" en azul. Tarjetas de producto con botón de corazón flotante, etiqueta de categoría superior en mayúsculas, precio destacado y botón "Ver prenda".
+4![1789685855458](image/README/1789685855458.png)![1789685617055](image/README/1789685617055.png)Diseño centrado que utiliza una ilustración 3D de bolsas de compras en tonos azul y naranja. Muestra un título en negrita "Tu carrito está vacío", texto descriptivo en gris y un botón de ancho completo ( *CTA* ) "Explorar Catálogo de Ropa" estilizado en azul rey.
+5 ![1789693623792](image/README/1789693623792.png) ![1789693743052](image/README/1789693743052.png) Marco de imagen con esquinas redondeadas sobre fondo gris tenue. Título principal en negrita, código de referencia (`#ROPA-67890`), precio en color azul rey (`$45.000 COP`), bloque descriptivo, botones cuadrados para selección de talla (resaltando la talla activa en azul), control numérico de cantidad y botón "Añadir al Carrito".
+6 ![1789696415004](image/README/1789696415004.png) ![1789694201022](image/README/1789694201022.png) Vista con enlace superior "Vaciar carrito" en texto rojo. Las tarjetas de producto incluyen selectores desplegables ( *dropdowns* ) para `Talla` y `Cant`, ícono de papelera gris y precio en azul. Cuenta con un botón de borde azul `+ Agregar más prendas`, tarjeta de desglose (Subtotal, Impuestos 19%, Total) y botón "Proceder al Pago".
+7![1789685919355](image/README/1789685919355.png)![1789685639469](image/README/1789685639469.png)Tarjetas de órdenes numeradas (`#ORD-XXXX`) con indicación de estado a la derecha ("En Preparación", "Entregado"). Detalla fecha de compra, resumen de prendas en texto secundario, monto total en azul y etiquetas de confirmación como "Pagado" o "✓ Recibido" en verde.
+8![1789685942691](image/README/1789685942691.png)![1789685669027](image/README/1789685669027.png)Tarjeta de usuario destacada con ícono de avatar, datos personales y la etiqueta flotante "Estudiante Activo". Lista de menú vertical encerrada en contenedores con bordes redondeados y flechas indicadoras (`>`), terminando con un botón de contorno azul para "Cerrar Sesión".
+9![1789693802643](image/README/1789693802643.png) ![1789693398554](image/README/1789693398554.png) Formulario organizado en 3 bloques independientes con íconos identificadores:
+**Datos de Entrega:** Campos para  *Nombre* ,  *Dirección/Salón* , *Ciudad* y *Teléfono* con textos de ejemplo.
+**Método de Pago:** Lista vertical con opciones ( *Tarjeta* ,  *Nequi/Daviplata* ,  *Efectivo* ) seleccionables mediante  *radio buttons
+**Resumen del Pedido:** Desglose financiero resaltando "Envío campus: Gratis" y botón azul "Confirmar Pedido".*
