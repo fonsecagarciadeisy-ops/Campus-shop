@@ -31,6 +31,7 @@ Campus-shop/
 El CSS está dividido en 4 archivos para que sea modular y fácil de mantener:
 
 ### `css/base.css` (Variables y Reset)
+
 - Define las variables de color en `:root`:
   - `--color-primario: #4f46e5` (violeta/azul principal).
   - `--color-acento: #ede9fe` (violeta claro para badges y fondos suaves).
@@ -40,12 +41,14 @@ El CSS está dividido en 4 archivos para que sea modular y fácil de mantener:
 - Aplica el reseteo estándar (`box-sizing: border-box`, márgenes en 0 y tipografía del sistema).
 
 ### `css/layout.css` (Estructura general)
+
 - `.contenedor-app`: Contenedor principal de la aplicación.
 - `.encabezado-superior`: Barra superior fija (`position: sticky`) con el logo y el botón del menú.
 - `main`: Área de contenido central (`flex: 1; align-content: start;`).
 - `.navegacion-inferior`: Menú de navegación fijo en la parte inferior (`position: fixed`).
 
 ### `css/components.css` (Componentes visuales)
+
 - **Tarjetas de producto (`.tarjeta-producto`)**:
   - Usan `display: flex; flex-direction: column; height: 100%;`.
   - El título tiene `min-height: 2.7em` y `line-clamp: 2` para que todos los títulos ocupen el mismo espacio.
@@ -55,7 +58,9 @@ El CSS está dividido en 4 archivos para que sea modular y fácil de mantener:
 - **Historial (`.tarjeta-pedido`)**: Tarjetas de pedidos con líneas divisorias para cabecera, prendas y total.
 
 ### `css/responsive.css` (Media Queries)
+
 Detecta el tamaño de la pantalla mediante `@media`:
+
 1. **Móvil (< 640px)**: 2 columnas en productos, elementos apilados y dock inferior móvil.
 2. **Tablet (640px a 1023px)**:
    - Catálogo pasa a 3 columnas.
@@ -73,11 +78,12 @@ Detecta el tamaño de la pantalla mediante `@media`:
 El proyecto simula interactividad utilizando pseudo-clases y selectores avanzados de CSS:
 
 1. **Abrir y cerrar el Menú Lateral:**
+
    - Hay un checkbox oculto (`#interruptor-menu`).
    - Al hacer clic en el icono `☰`, el checkbox cambia a `:checked`.
    - Con `#interruptor-menu:checked ~ .menu-lateral`, el menú cambia su posición de `left: -100%` a `left: 0`.
-
 2. **Filtros por categoría en `catalogo.html`:**
+
    - Se usan radio buttons ocultos (`#filtro-sudaderas`, `#filtro-camisetas`, etc.).
    - Cuando uno está `:checked`, oculta las tarjetas que no corresponden mediante `:not()`:
      ```css
@@ -86,14 +92,14 @@ El proyecto simula interactividad utilizando pseudo-clases y selectores avanzado
      }
      ```
    - Además, la etiqueta activa cambia su color a violeta primario.
-
 3. **Simular eliminación de prendas en `carrito.html`:**
+
    - Cada producto tiene un checkbox oculto (`#eliminar-item-1`, etc.).
    - Al hacer clic en la papelera `🗑️`, se desmarca el checkbox.
    - Con `:not(:checked)`, el item se oculta con `display: none;`.
    - Si ambos se desmarcan, se oculta la lista y aparece la sección `#seccion-carrito-vacio`.
-
 4. **Selección de talla en `producto.html`:**
+
    - Radio buttons ocultos (`name="talla"`) asociados a `<label class="opcion-talla">`.
    - Con `.input-talla:checked + .opcion-talla`, la talla seleccionada se pinta de color violeta con texto blanco.
 
@@ -102,5 +108,18 @@ El proyecto simula interactividad utilizando pseudo-clases y selectores avanzado
 ## 4. Cómo probar el código
 
 Solo abre cualquiera de los archivos `.html` en tu navegador:
+
 - En VS Code, haz clic derecho en `index.html` y selecciona **Open with Live Server**.
 - O haz doble clic directo sobre `index.html` para abrirlo en el navegador.
+
+
+
+
+| Numero | Maqueta                                          | col3                                             | Observaciones |
+| ------ | ------------------------------------------------ | ------------------------------------------------ | ------------- |
+| 1      | ![1789685744675](image/README/1789685744675.png) | ![1789685454372](image/README/1789685454372.png) |               |
+| 2      | ![1789685775857](image/README/1789685775857.png) | ![1789685562331](image/README/1789685562331.png) |               |
+| 3      | ![1789685800113](image/README/1789685800113.png) | ![1789685586943](image/README/1789685586943.png) |               |
+| 4      | ![1789685855458](image/README/1789685855458.png) | ![1789685617055](image/README/1789685617055.png) |               |
+| 5      | ![1789685919355](image/README/1789685919355.png) | ![1789685639469](image/README/1789685639469.png) |               |
+| 6      | ![1789685942691](image/README/1789685942691.png) | ![1789685669027](image/README/1789685669027.png) |               |
